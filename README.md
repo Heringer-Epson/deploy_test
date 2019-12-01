@@ -1,7 +1,11 @@
 # Test template to deploy Dash on Google Cloud
 
-1) python3 -m venv .venvs/test_env
-2) source .venvs/test_env/bin/activate
-3) clone directory
-4) python main.py (this is a test)
-5) gcloud app deploy
+
+1) ~/> python3 -m venv .venvs/test_env
+2) ~/source .venvs/test_env/bin/activate
+3) If not connected to git repo: Hamburger Menu -> Source repositories -> connect to external...
+4) gcloud source repos clone github_heringer-epson_deploy_test deploy-test
+5) cd deploy-test/
+6) pip install -r requirements.txt
+7) python main.py (this is a test)
+8) gcloud app deploy
