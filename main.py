@@ -1,6 +1,11 @@
 import dash
 import dash_core_components as dcc
 import dash_html_components as html
+from dash.dependencies import Input, Output
+
+#external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
+#app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
+#app.config.suppress_callback_exceptions = True
 
 dash_app = dash.Dash()
 app = dash_app.server
@@ -11,6 +16,18 @@ dash_app.layout = html.Div(children=[
     html.Div(children='''
         This is Dash running on Google App Engine.
     '''),
+
+    html.H6('Currency:', style={'marginLeft': '3.0em', }),
+    dcc.Dropdown(
+        id='tab-test',
+        options=[{'label': i, 'value': i} for i in ['USD', 'CAD']],
+        value='USD',
+        style={'width': '100px', 'marginLeft': '.5em'},
+    ),
+
+    html.Div(
+        id='printer',
+        style={'textAlign': 'center'},),
 
     dcc.Graph(
         id='example-graph',
@@ -25,6 +42,11 @@ dash_app.layout = html.Div(children=[
         }
     )
 ])
+
+@dash_app.callback(Output('printer', 'children'),
+              [Input('tab-test', 'value')])
+def tab_func(curr):
+    return 'Currency is "{}'.format(curr)
 
 if __name__ == '__main__':
     dash_app.run_server(debug=True)
