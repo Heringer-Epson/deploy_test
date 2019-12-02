@@ -3,11 +3,12 @@ import dash_core_components as dcc
 import dash_html_components as html
 from dash.dependencies import Input, Output
 
-#external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
-#app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
-#app.config.suppress_callback_exceptions = True
+#My routines.
+from src.routine_test import Inp_Pars
 
-dash_app = dash.Dash()
+external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
+dash_app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
+dash_app.config.suppress_callback_exceptions = True
 app = dash_app.server
 
 dash_app.layout = html.Div(children=[
@@ -37,7 +38,7 @@ dash_app.layout = html.Div(children=[
                 {'x': [1, 2, 3], 'y': [2, 4, 5], 'type': 'bar', 'name': u'Montréal'},
             ],
             'layout': {
-                'title': 'Dash Data Visualization'
+                'title': 'Dash Data Visualization' + str(Inp_Pars.T_sim)
             }
         }
     )
