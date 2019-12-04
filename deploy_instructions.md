@@ -64,7 +64,7 @@
       + Make sure that the debug option was set to False to prevent the app from refreshing every few seconds.
   + If something goes wrong and you need to debug your deployed code, try:
     + gcloud app logs tail -s default
-+ If you try too many times to deploy an app, GCP might compain that you have exceed your quota. Run the following:
++ If you try too many times to deploy an app, GCP might compain that you have exceed your quota. Run the following (credit)[https://serverfault.com/questions/869418/google-cloud-in-use-addresses-quota-exceeded]:
   + gcloud app versions list | grep -v SERVING | awk '{print $2}' | tail -n +1 | xargs -I {} gcloud app versions delete {} 
 + Useful resources:
   + https://www.phillipsj.net/posts/deploying-dash-to-google-app-engine/
