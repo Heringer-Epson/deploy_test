@@ -61,6 +61,7 @@
   + A Note: when an app is deployed, a 'Docker' container is created. This is similar to a virtual env. Instructions on how to create this container are passed through a app.yaml file. App that only use python mative packages are somewhat easy to deploy, as a default container will suffice.
   + In the repo dir, simply type:
     + gcloud app deploy --stop-previous-version
+      + Make sure that the debug option was set to False to prevent the app from refreshing every few seconds.
   + If something goes wrong and you need to debug your deployed code, try:
     + gcloud app logs tail -s default
 + If you try too many times to deploy an app, GCP might compain that you have exceed your quota. Run the following:
