@@ -25,7 +25,7 @@
     + 100 GB
     + allow HTTP and HTTPS
 + Set Firewall rules
-  + Detailed instructions (here)[https://docs.bitnami.com/google/faq/administration/use-firewall/]
+  + Detailed instructions [here](https://docs.bitnami.com/google/faq/administration/use-firewall/)
   + HB -> VPC Network -> Firewall rules
     + Create Firewall rule.
     + Leave all default, except the following. 
@@ -41,8 +41,8 @@
     + HB -> Source repositories.
     + On the top right, click Add repository.
     + Connect to external repo (naviagate through the options).
-    + You may need to add an ssh key to git (not entirely sure). If so, see (this link)[https://cloud.google.com/source-repositories/docs/authentication#ssh].
-    + If needed, more instructions can be found (here)[https://www.youtube.com/watch?v=D85bCIvPM1s].
+    + You may need to add an ssh key to git (not entirely sure). If so, see [this link](https://cloud.google.com/source-repositories/docs/authentication#ssh).
+    + If needed, more instructions can be found [here](https://www.youtube.com/watch?v=D85bCIvPM1s).
 + Naviagte to your GCP project and start a GCS (terminal icon on top right).
   + ls (see the content of the home dir. The git repo should be there. If not, try:
   + gcloud source repos clone "REPOSITORY_NAME" "DIRECTORY_NAME"
@@ -56,7 +56,7 @@
     + pip install -r requirements.txt
   + Run app.
     + python main.py
-  + (This source)[https://www.phillipsj.net/posts/deploying-dash-to-google-app-engine/] by Jamie Phillips is great! 
+  + [This source](https://www.phillipsj.net/posts/deploying-dash-to-google-app-engine/) by Jamie Phillips is great! 
 + OPTION 2) Deploy the app.
   + A Note: when an app is deployed, a 'Docker' container is created. This is similar to a virtual env. Instructions on how to create this container are passed through a app.yaml file. App that only use python mative packages are somewhat easy to deploy, as a default container will suffice.
   + In the repo dir, simply type:
@@ -64,7 +64,7 @@
       + Make sure that the debug option was set to False to prevent the app from refreshing every few seconds.
   + If something goes wrong and you need to debug your deployed code, try:
     + gcloud app logs tail -s default
-+ If you try too many times to deploy an app, GCP might compain that you have exceed your quota. Run the following (credit)[https://serverfault.com/questions/869418/google-cloud-in-use-addresses-quota-exceeded]:
++ If you try too many times to deploy an app, GCP might compain that you have exceed your quota. Run the following [credit](https://serverfault.com/questions/869418/google-cloud-in-use-addresses-quota-exceeded):
   + gcloud app versions list | grep -v SERVING | awk '{print $2}' | tail -n +1 | xargs -I {} gcloud app versions delete {} 
 + Useful resources:
   + https://www.phillipsj.net/posts/deploying-dash-to-google-app-engine/
