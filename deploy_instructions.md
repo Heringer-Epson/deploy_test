@@ -1,14 +1,22 @@
 ---
-# Instructions for deploying a DASH app on the cloud.
+# Deploying a DASH app on the cloud.
 ---
 
 ---
-#### Legend:
+#### Acronyms:
 + HB: Hamburger Menu on Google Cloud.
 + VM: Virtual Machine. 
 + GCP: Google Cloud Platform.
 + GCS: Google Cloud Shell.
 ---
+
+---
+#### Example:
++ Link to an example of Dash app: https://github.com/Heringer-Epson/deploy_test
+---
+
+---
+#### Instructions:
 
 + Create new project (e.g. myproj-test)
 + Create VM instance
@@ -61,3 +69,5 @@
   + https://www.phillipsj.net/posts/deploying-dash-to-google-app-engine/
   + https://www.youtube.com/watch?v=RbejfDTHhhg
   + https://www.youtube.com/watch?v=QUYCiIkzZlA
+
+---
