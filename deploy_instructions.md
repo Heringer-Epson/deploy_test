@@ -20,10 +20,6 @@
 
 + Create new project (e.g. myproj-test)
 + Create VM instance
-  + HB -> Compute Engine -> VM instances
-    + Ubuntu 18.04 LTS
-    + 100 GB
-    + allow HTTP and HTTPS
 + Set Firewall rules
   + Detailed instructions [here](https://docs.bitnami.com/google/faq/administration/use-firewall/)
   + HB -> VPC Network -> Firewall rules
