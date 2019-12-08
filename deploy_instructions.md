@@ -19,7 +19,6 @@
 #### Instructions:
 
 + Create new project (e.g. myproj-test)
-+ Create VM instance
 + Set Firewall rules
   + Detailed instructions [here](https://docs.bitnami.com/google/faq/administration/use-firewall/)
   + HB -> VPC Network -> Firewall rules
